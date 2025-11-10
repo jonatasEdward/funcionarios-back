@@ -22,7 +22,7 @@ public class FuncionarioService {
     }
 
     public List<FuncionarioResponse> listar(String cargo, Boolean ativo) {
-        List<Funcionario> lista;
+        List<Funcionario> lista = null;
 
         if (cargo != null && !cargo.isBlank() && ativo != null) {
             lista = repository.findByCargoIgnoreCaseContainingAndAtivoOrderByNomeAsc(cargo.trim(), ativo);
